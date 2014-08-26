@@ -26,8 +26,17 @@ class byAuthor
 				$qin=$db->query("SELECT *,
 				             IFNULL(
 				                (SELECT `filename` FROM `photos` WHERE `photos`.`aid`=`albums`.`aid`
-				                    ORDER BY `phid` DESC LIMIT 1), '') AS `photo`
-								FROM `albums` WHERE `uid`='".$a['uid']."' ORDER BY `aid` DESC");
+				                    ORDER BY `phid` DESC LIMIT 1), '') AS `photo`,
+				             IFNULL(
+		                		(SELECT SUM(`likes`) as `alllikes` FROM `votes` WHERE `votes`.`aid`=`albums`.`aid`),'0')
+							AS `alllikes`,
+					     IFNULL(
+		                		(SELECT SUM(`dislikes`) as `alldislikes` FROM `votes` WHERE `votes`.`aid`=`albums`.`aid`),'0')
+		                			AS `alldislikes`,
+		                	     IFNULL(
+		                	     	(SELECT COUNT(`cid`) as `comments` FROM `comments` WHERE `comments`.`aid`=`albums`.`aid`),'0')
+		                			AS `comments`
+						FROM `albums` WHERE `uid`='".$a['uid']."' ORDER BY `aid` DESC");
 
 				if($db->num_rows($qin)>0){
 
@@ -38,7 +47,17 @@ class byAuthor
 
 					while($b=$db->fetch_array($qin)){
 
-						$result.=$ws->albumPreview(0, $b['aid'], $b['uid'], $b['photo'], $b['name'], $b['created']);
+						$result.=$ws->albumPreview(
+							0,
+							$b['aid'],
+							$b['uid'],
+							$b['photo'],
+							$b['name'],
+							$b['created'],
+							$b['alllikes'],
+							$b['alldislikes'],
+							$b['comments']
+						);
 
 					}
 
