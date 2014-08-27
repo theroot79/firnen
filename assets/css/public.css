@@ -160,12 +160,12 @@ h2#p-photo-name{
 }
 
 /* ******************* ALBUMS ******************* */
-#albums-blk{
+#albums-blk,.albums-blk-author{
 	width:965px;
 	padding:29px 0 5px 35px;
 }
 
-#albums-blk h2{
+#albums-blk h2,.albums-blk-author h2{
 	display:block;
 	width:100%;
 	height:20px;
@@ -173,7 +173,7 @@ h2#p-photo-name{
 	text-align:left;
 }
 
-#albums-blk #albums-blk-items{
+#albums-blk #albums-blk-items,.albums-blk-author .albums-blk-items-author{
 	display:block;
 	width:100%;
 	padding-top:10px;

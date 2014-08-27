@@ -41,9 +41,9 @@ class byAuthor
 				if($db->num_rows($qin)>0){
 
 					$result.='
-					<div id="albums-blk">
+					<div class="albums-blk-author">
 						<h2>'.$a['fname'].' '.$a['lname'].'&lsquo;s albums:</h2>
-						<div id="albums-blk-items">';
+						<div class="albums-blk-items-author">';
 
 					while($b=$db->fetch_array($qin)){
 

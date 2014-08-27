@@ -52,6 +52,7 @@
 	}
     #publicphotos,
     #albums-blk,
+    .albums-blk-author,
     #view-album{
 	    width:100%;
 	    padding:20px 0;
@@ -59,6 +60,7 @@
 
 	#publicphotos h1,
 	#albums-blk h2,
+    .albums-blk-author h2,
 	h2#view-album-username{
 		text-align:center;
 	}
@@ -67,6 +69,7 @@
 	}
 
 	#albums-blk-items,
+    .albums-blk-items-author,
 	#p-albums-items{
 		justify-content:center;
 	}
@@ -219,6 +222,7 @@
 	}
 	#publicphotos,
 	#albums-blk,
+    .albums-blk-author,
 	#view-album{
 		width:100%;
 		padding:20px 0;
@@ -226,6 +230,7 @@
 
 	#publicphotos h1,
 	#albums-blk h2,
+    .albums-blk-author h2,
 	h2#view-album-username{
 		text-align:center;
 	}
@@ -234,6 +239,7 @@
 	}
 
 	#albums-blk-items,
+    .albums-blk-items-author,
 	#p-albums-items{
 		justify-content:center;
 	}
