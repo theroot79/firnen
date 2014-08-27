@@ -202,7 +202,7 @@ class myAlbums
 				<div id="add-photo-form">
 					<h2>Upload new photo</h2>
 					<form method="post" action="/myalbums/'.intval($_GET['task_1']).'/" class="frm" enctype="multipart/form-data">
-						<p><input type="file" name="file" value="" required="required"/>
+						<p><input type="file" name="file" value="" required="required" accept="image/*"/>
 							<input type="text" name="name" value="" placeholder="Photo name"
 								required="required" maxlength="150" /></p>
 						<p><button type="submit" name="submit">Upload now</button></p>
