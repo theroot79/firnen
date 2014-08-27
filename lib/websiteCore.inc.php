@@ -330,7 +330,7 @@ class websiteCore
 	 * @param $created Integer Data - created, unix timestamp
 	 * @return string
 	 */
-	public function photoPreview($searchID=0, $phid=0, $uid=0, $filename='', $name='', $created=0)
+	public function photoPreview($searchID=0, $phid=0, $uid=0, $filename='', $name='', $created=0,$aid=0)
 	{
 
 
@@ -341,6 +341,7 @@ class websiteCore
 				while($a=$db->fetch_array($q)){
 					$phid=$a['phid'];
 					$uid=$a['uid'];
+					$aid=$a['aid'];
 					$filename=$a['filename'];
 					$name=$a['name'];
 					$created=$a['created'];
@@ -355,7 +356,7 @@ class websiteCore
 				</a>
 				<div class="p-photos-inf">
 					<strong class="p-photos-name">'.$name.'</strong>
-					<strong class="p-photos-author">by Author (link)</strong>
+					<strong class="p-photos-author">by Author (<a href="/album/'.$aid.'/" >link)</strong>
 					<em class="p-photos-date">'.date('Y/m/d', $created).'</em>
 				</div>
 			</div>';

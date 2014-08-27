@@ -34,7 +34,7 @@ class publicPhotos
 		if($db->num_rows($q)>0){
 			while($a=$db->fetch_array($q)){
 
-				$result.=$ws->photoPreview(0, $a['phid'], $a['uid'], $a['filename'], $a['name'], $a['created']);
+				$result.=$ws->photoPreview(0, $a['phid'], $a['uid'], $a['filename'], $a['name'], $a['created'],$a['aid']);
 
 			}
 		}

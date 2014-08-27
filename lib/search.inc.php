@@ -48,7 +48,7 @@ class search
 		$q=$db->query("SELECT * FROM `photos` WHERE (`name` LIKE '".$search."%' OR `name` LIKE '%".$search."%') ");
 		if($db->num_rows($q)>0){
 			while($a=$db->fetch_array($q)){
-				$photosfound.=$ws->photoPreview(0, $a['phid'], $a['uid'], $a['filename'], $a['name'], $a['created']);
+				$photosfound.=$ws->photoPreview(0, $a['phid'], $a['uid'], $a['filename'], $a['name'], $a['created'],$a['aid']);
 			}
 		}else{
 			$photosfound.='<h2 class="errormsg">We didn&lsquo;t find any photos with that keyword</h2>';
