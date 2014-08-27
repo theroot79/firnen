@@ -328,6 +328,7 @@ class websiteCore
 	 * @param $filename String Filename
 	 * @param $name String Name of the photo
 	 * @param $created Integer Data - created, unix timestamp
+	 * @param $aid Integer Author ID
 	 * @return string
 	 */
 	public function photoPreview($searchID=0, $phid=0, $uid=0, $filename='', $name='', $created=0,$aid=0)
